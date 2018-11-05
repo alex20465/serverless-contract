@@ -1,0 +1,14 @@
+{
+  "name": "serverless-contractor-{{@root.name}}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jsonschema": "^1.2.4"
+  },
+  "devDependencies": {
+    "@types/jsonschema": "^1.1.1"
+  }
+}
