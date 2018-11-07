@@ -1,6 +1,6 @@
 import { Program, Args, CompilerOptions } from "typescript-json-schema";
 import { ServerlessFunction } from "./ServerlessFunction";
-import { JSONSchema7, JSONSchema4, JSONSchema7Array } from "json-schema";
+import { JSONSchema7Array } from "json-schema";
 
 import * as TJS from "typescript-json-schema";
 
@@ -41,11 +41,10 @@ export class Generator {
     }
 
     private generateSchema(namespace: string, program: Program) {
-        const schema = TJS.generateSchema(
-            program,
-            namespace,
-            this.options.args
-        );
+        const schema = TJS.generateSchema(program, namespace, {
+            ignoreErrors: true,
+            ...this.options.args
+        });
         delete schema["$schema"];
         return schema;
     }
